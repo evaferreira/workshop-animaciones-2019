@@ -1,0 +1,8 @@
+/* insertando-svg.css */
+
+iframe {
+    /* Eliminamos estilos predeterminados */
+    border: none;
+    width: 200px;
+    height: 400px;
+}

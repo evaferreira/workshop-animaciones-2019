@@ -1,0 +1,72 @@
+/* transitions.css */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+
+    background-color: tomato;
+    margin: 50px auto;
+}
+
+.uno {
+    /*
+        1s     = 1 segundo
+        1000ms = 1 segundo
+    */
+    transition-property: border-radius, background-color;
+    transition-duration: 0.5s,          5s;
+}
+
+.uno:hover {
+    background-color: greenyellow;
+    border-radius: 50%;
+    transform: rotate(20deg);
+}
+
+.dos {
+    transition-property: transform, border-radius, color;
+    transition-duration: 1s,        2s,            1s;
+    transition-delay:    0s,        1s,            3s;
+}
+.dos:hover {
+    transform: rotate(30deg);
+    color: purple;
+    border-radius: 50%;
+}
+
+.tres {
+    opacity: 0.3;
+
+    /* Regreso */
+    transition-delay: 3s;
+    transition-duration: 4s;
+}
+.tres:hover {
+    opacity: 1;
+
+    /* Ida */
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0s;
+}
+
+.cuatro {
+    transition-property: transform;
+    transition-duration: 2s;
+    /*
+        Default: ease
+        Predefinidas: ease-in / ease-out / ease-in-out / linear
+        Linear: Velocidad constante
+        cubic-bezier.com
+
+        Stripe
+    */
+    transition-timing-function: cubic-bezier(0.6, 1.74, 0.8, 1.8);
+
+}
+.cuatro:hover {
+    transform: rotate(1turn);
+}

@@ -1,0 +1,47 @@
+/* transform.css */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+
+    background-color: tomato;
+    margin: 50px auto;
+
+    transition: all 0.5s;
+}
+
+.uno:hover {
+    /* scale: Proporcional. Valor original: 1 */
+    /* -1 invierte / refleja el elemento */
+    transform: scale(-1);
+}
+
+.dos:hover {
+    /* deg ---> degree
+        Valor positivo: Sentido del reloj
+        Valor negativo: Al revés
+       turn
+    */
+    transform: rotate(5.2turn);
+}
+
+.tres:hover {
+    /* Inclinar
+        Predeterminado en el eje X solamente
+    */
+    transform: skewY(-15deg);
+}
+
+.cuatro:hover {
+    transform: translate(50px, 100px);
+    /* scale: 1.3; :( */
+}
+
+.cinco:hover {
+    transform: scale(1.5) skew(15deg) rotate(45deg);
+}
+
+

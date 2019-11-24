@@ -1,0 +1,135 @@
+/* animaciones.css */
+
+.caja {
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+
+    background-color: tomato;
+    margin: 50px auto;
+}
+
+/* Declaramos la animación y le ponemos un nombre */
+/* Podemos usar from / to */
+@keyframes colores {
+    0% {
+        background-color: purple;
+    }
+    50% {
+        background-color: chocolate;
+    }
+    100% {
+        background-color: yellow;
+    }
+}
+
+.uno {
+    animation-name: colores;
+    animation-duration: 2s;
+    animation-delay: 3s;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        background-color: tomato;
+    }
+}
+
+.dos {
+    opacity: 0;
+    background-color: transparent;
+    animation-name: aparecer;
+    animation-duration: 1s;
+    /* forwards (quedarse en el último fotograma)
+        backwards ??? -> Buscar MDN
+        both      ??? -> Buscar en MDN
+    */
+    animation-fill-mode: forwards;
+}
+
+@keyframes girar {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.tres {
+    height: 50px;
+    line-height: 50px;
+    width: 250px;
+    margin: 120px auto;
+
+    animation-name: girar;
+    animation-duration: 1s;
+    /* Cuántas veces se repite?
+        - Número entero
+        - Número decimal
+        - Infinite
+    */
+    animation-iteration-count: 2;
+    animation-timing-function: steps(12);
+    animation-direction: alternate;
+}
+
+@keyframes super {
+    0% {
+        background-color: pink;
+    }
+    30% {
+        background-color: blue;
+    }
+    70% {
+        background-color: peru;
+    }
+    100% {
+        background-color: papayawhip;
+    }
+}
+
+.cuatro {
+    animation-name: super;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+.cuatro:hover {
+    animation-play-state: running;
+}
+
+.cinco {
+    margin-left: 20px;
+    filter: grayscale(1);
+
+    transition: filter 1s;
+}
+.cinco:hover {
+    filter: grayscale(0);
+}
+
+.seis {
+    margin-top: 400px;
+    text-align: center;
+    filter: hue-rotate(0deg);
+    
+    transition: filter 2s;
+}
+.seis:hover {
+    filter: hue-rotate(360deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none!important;
+        transition: none!important;
+    }
+    .dos {
+        opacity: 1;
+        background-color: tomato;
+    }
+}
+
+
+
